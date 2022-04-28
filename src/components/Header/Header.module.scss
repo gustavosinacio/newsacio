@@ -1,0 +1,52 @@
+$height: 5rem;
+
+.container {
+  height: $height;
+  border-bottom: 1px solid var(--gray-600);
+
+  .content {
+    max-width: var(--content-max-width);
+    height: 100%;
+    margin: 0 auto;
+    padding: 0 2rem;
+
+    display: flex;
+    align-items: center;
+
+    h1 {
+      padding: 0.1rem 0.7rem;
+      transition: all 0.2s;
+
+      &:hover {
+        box-shadow: 0 0.2rem 0.2rem -0.2rem var(--cyan-100),
+          inset 0 -0.8rem 0.3rem -0.8rem var(--cyan-100);
+        border-bottom: 0.2rem solid var(--cyan-100);
+      }
+    }
+
+    nav {
+      margin-left: 5rem;
+      height: 100%;
+
+      a {
+        display: inline-block;
+        line-height: 5rem;
+        opacity: 0.5;
+        padding: 0 0.5rem;
+
+        transition: all 0.2s;
+
+        &:hover {
+          opacity: 1;
+        }
+
+        &.active {
+          opacity: 1;
+
+          box-shadow: 0 0rem 0rem 0rem var(--cyan-100),
+            inset 0 -1rem 0.5rem -0.6rem var(--cyan-100);
+        }
+      }
+    }
+  }
+}
