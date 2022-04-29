@@ -1,6 +1,7 @@
 import Head from "next/head";
 import { AiOutlineCode } from "react-icons/ai";
 
+import { SubscribeButton } from "../components/SubscribeButton/SubscribeButton";
 import styles from "../styles/home.module.scss";
 
 export default function Home() {
@@ -28,6 +29,7 @@ export default function Home() {
               a month
             </span>
           </p>
+          <SubscribeButton />
         </section>
 
         <AiOutlineCode color="#61dafb" />
