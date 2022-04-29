@@ -1,0 +1,36 @@
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 0.5rem 1.5rem;
+  border-radius: 2rem;
+  border: 0;
+  font-weight: 700;
+
+  background: var(--gray-900);
+  color: var(--white);
+
+  transition: all 0.2s;
+
+  svg {
+    height: 1.5rem;
+    width: 1.5rem;
+    transition: all 0.2s;
+  }
+
+  * + * {
+    margin-left: 0.5rem;
+  }
+
+  &:hover {
+    font-size: 1rem;
+    filter: brightness(1.1);
+    padding: 0.6rem 1.6rem;
+
+    svg {
+      height: 1.8rem;
+      width: 1.8rem;
+    }
+  }
+}

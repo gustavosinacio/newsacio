@@ -14,8 +14,8 @@
   --gray-300: #a8a8b3;
   --gray-600: #5b5b5b;
   --gray-700: #3e3e3e;
-  --gray-800: #292929;
-  --gray-900: #121212;
+  --gray-800: #272727;
+  --gray-900: #171717;
 
   // Sizes ----------
   --content-max-width: 1120px;
@@ -43,13 +43,6 @@ body {
   background: var(--gray-800);
   color: var(--white);
   -webkit-font-smoothing: antialiased;
-}
-
-body,
-input,
-textarea,
-button {
-  font: 500 1rem Quicksand, sans-serif;
 }
 
 h1,
