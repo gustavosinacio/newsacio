@@ -1,10 +1,12 @@
+import { GetStaticProps } from "next";
 import Head from "next/head";
 import { AiOutlineCode } from "react-icons/ai";
 
 import { SubscribeButton } from "../components/SubscribeButton/SubscribeButton";
+import { stripe } from "../services/stripe";
 import styles from "../styles/home.module.scss";
 
-export default function Home() {
+export default function Home({ product }: HomeProps) {
   return (
     <>
       <Head>
@@ -25,11 +27,11 @@ export default function Home() {
               {Intl.NumberFormat("en-us", {
                 style: "currency",
                 currency: "USD",
-              }).format(9.9)}{" "}
+              }).format(product.value / 100)}{" "}
               a month
             </span>
           </p>
-          <SubscribeButton />
+          <SubscribeButton priceId={product.id} />
         </section>
 
         <AiOutlineCode color="#61dafb" />
@@ -37,3 +39,16 @@ export default function Home() {
     </>
   );
 }
+
+export const getStaticProps: GetStaticProps = async () => {
+  const price = await stripe.prices.retrieve("price_1Ktl3RLUDr0YHafose1J84Fg", {
+    expand: ["product"],
+  });
+
+  return {
+    props: {
+      product: { id: price.id, value: price.unit_amount },
+    },
+    revalidate: 60,
+  };
+};
